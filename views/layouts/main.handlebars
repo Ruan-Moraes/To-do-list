@@ -3,29 +3,36 @@
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link rel='stylesheet' href='/styles.css' />
+    <script src='/script.js' defer></script>
     <title>
       To-do List
     </title>
   </head>
   <body>
-    <header>
-      <div>
-        <h1>To-do List</h1>
-      </div>
-      <div>
-        <ul>
-          <li>
-            <a href=''>Criar Tarefa</a>
-          </li>
-          <li>
-            <a href=''>Alterar Tarefa</a>
-          </li>
-          <li>
-            <a href=''>Remover Tarefa</a>
-          </li>
-        </ul>
-      </div>
-    </header>
-    {{{body}}}
+    <div class='container'>
+      <header>
+        <div>
+          <h1>To-do-List</h1>
+        </div>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        <div>
+          <p id='date'>
+            {{time}}
+          </p>
+          <p>
+            Feito por
+            <a
+              href='https://github.com/Ruan-Moraes'
+              target='_blank'
+              rel='noopener noreferrer'
+            >Ruan Moraes</a>
+          </p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

@@ -10,10 +10,18 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
-import router from './routes/routes.mjs';
+import tasks from './routes/tasks.mjs';
 
-app.use('/', router);
+app.use('/tasks', tasks);
+
+app.get('/', (req, res) => {
+  res.render('home');
+});
+
+app.use((req, res) => {
+  res.status(404).send('Página não encontrada');
+});
 
 app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+  console.log('Servidor iniciado em http://localhost:3000');
 });

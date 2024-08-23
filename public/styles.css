@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,182 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  padding: 0 1rem;
+  min-width: 100vw;
+  min-height: 100vh;
   background-color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 32rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+form input {
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+form #addTask {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form #addTask:hover {
+  background-color: #0056b3;
+}
+
+form label {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.tasks__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.task__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.task__title {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.task__text {
+  width: 100%;
+  word-break: break-word;
+  color: #555;
+}
+
+.done .task__title,
+.done .task__text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+@media screen and (max-width: 350px) {
+  .task {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+.task__footer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task__footer button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task__footer button:hover {
+  background-color: #0056b3;
+}
+
+.task__footer div:last-child button {
+  background-color: #dc3545;
+}
+
+.task__footer div:last-child button:hover {
+  background-color: #bd2130;
+}
+
+footer {
+  margin-top: 1rem;
+  text-align: center;
+  color: #666;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+footer div p:first-child {
+  font-size: 0.875rem;
+}
+
+footer div p:last-child {
+  font-size: 1.25rem;
+}
+
+footer div p:last-child a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer div p:last-child a:hover {
+  color: #0056b3;
 }

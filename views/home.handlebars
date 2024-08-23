@@ -1,8 +1,59 @@
-{{#each tasks}}
-  <div class='task'>
-    <div class='task-body'>
-      <h2 class='task-title'>{{nome}}</h2>
-      <p class='task-text'>{{descricao}}</p>
-    </div>
+<form action='tasks/add' method='post'>
+  <div>
+    <label for='name'>
+      Nome da tarefa
+    </label>
+    <input type='text' name='name' placeholder='Informe o nome da sua tarefa' />
   </div>
-{{/each}}
+  <div>
+    <label for='description'>
+      Descrição da tarefa
+    </label>
+    <input
+      type='text'
+      name='description'
+      placeholder='Informe a descrição da sua tarefa'
+    />
+  </div>
+  <div>
+    <input type='submit' name='addTask' id='addTask' value='Adicionar Tarefa' />
+  </div>
+</form>
+
+<hr />
+
+<div class='tasks__container'>
+  {{#each tasks}}
+    <div class='task'>
+      {{#if done}}
+        <div class='task__body done'>
+          <h2 class='task__title'>{{name}}</h2>
+          <p class='task__text'>{{description}}</p>
+        </div>
+      {{else}}
+        <div class='task__body'>
+          <h2 class='task__title'>{{name}}</h2>
+          <p class='task__text'>{{description}}</p>
+        </div>
+      {{/if}}
+      <div class='task__footer'>
+        <div>
+          {{#if done}}
+            <form action='/tasks/done/{{id_task}}' method='POST'>
+              <button type='submit'>Desfazer</button>
+            </form>
+          {{else}}
+            <form action='/tasks/done/{{id_task}}' method='POST'>
+              <button type='submit'>Concluir</button>
+            </form>
+          {{/if}}
+        </div>
+        <div>
+          <form action='tasks/delete/{{id_task}}' method='POST'>
+            <button type='submit'>Excluir</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
