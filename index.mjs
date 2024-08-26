@@ -15,7 +15,7 @@ import tasks from './routes/tasks.mjs';
 app.use('/tasks', tasks);
 
 app.get('/', (req, res) => {
-  res.render('home');
+  res.redirect('/tasks');
 });
 
 app.use((req, res) => {
